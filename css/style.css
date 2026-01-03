@@ -1,0 +1,180 @@
+/* css/style.css */
+
+:root {
+    --primary: #2c3e50;    /* Dark Slate */
+    --accent: #2980b9;     /* Blue */
+    --light: #ecf0f1;      /* Light Gray */
+    --text: #333;
+    --white: #fff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+}
+
+/* Main Layout */
+main {
+    flex: 1; /* Pushes footer down */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Hero Section (Home) */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(44,62,80,0.8), rgba(44,62,80,0.8)), 
+                url('../media/hero-bg.jpg') center/cover;
+    /* Note: Add a file named hero-bg.jpg to your media folder, or this will be gray */
+    background-color: #555; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.member-card {
+    background: var(--light);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.member-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-color: #ddd; /* Placeholder color */
+}
+
+.member-info { padding: 20px; }
+.role { color: var(--accent); font-weight: bold; display: block; margin-bottom: 10px; }
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+.contact-wrapper { max-width: 600px; margin: 0 auto; }
+.form-group { margin-bottom: 20px; }
+label { display: block; margin-bottom: 5px; font-weight: bold; }
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea { height: 150px; }
+
+/* Footer */
+footer {
+    background: #1a252f;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    nav { flex-direction: column; gap: 15px; }
+    .nav-links a { margin: 0 10px; }
+    .hero h1 { font-size: 2rem; }
+}
