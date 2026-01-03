@@ -79,7 +79,7 @@ main {
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(44,62,80,0.8), rgba(44,62,80,0.8)), 
-                url('../media/hero-bg.jpg') center/cover;
+                url('../media/mcnair.webp') center/cover;
     /* Note: Add a file named hero-bg.jpg to your media folder, or this will be gray */
     background-color: #555; 
     display: flex;
