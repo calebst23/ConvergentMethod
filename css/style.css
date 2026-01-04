@@ -3,17 +3,39 @@
 :root {
     --primary: #2c3e50;    /* Dark Slate */
     --accent: #2980b9;     /* Blue */
-    --light: #ecf0f1;      /* Light Gray */
-    --text: #333;
-    --white: #024B68;
+    --bkgd: #0C2B49;
+    --light: #ecf0f1; 
+    --dark: #1a252f;     /* Light Gray */
+    --text: #eeeeee;
+    --white: #fff;
+    --black: #000;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+h1 {
+    font-family: Arial, sans-serif;
+    font-weight: 450;       /* 100 is thin, 400 is normal, 800 is bold */
+    letter-spacing: 2px;    /* Adds space between letters */
+    font-size: 3rem;        /* 1rem = approx 16px. So this is ~48px */
+    color: var(--light);  /* Uses your theme color */
+    margin-bottom: 4rem;  /* Space below the header */
+}
+
+/* Styling all H2s (Section Headers) */
+h2 {
+    font-family: Arial, sans-serif;
+    font-weight: 300;       /* Lighter weight for contrast */
+    font-size: 2rem;        /* Smaller than H1 */
+    color: var(--light);   /* Uses your accent color (Blue/Orange) */
+    padding-bottom: 30px;   /* Space between text and the line */
+    margin-bottom: 20px;
+}
+
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     color: var(--text);
-    background: var(--white);
+    background: var(--bkgd);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -36,12 +58,24 @@ nav {
     align-items: center;
 }
 
+/* css/style.css */
+
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
 }
 
 .nav-links a {
@@ -57,9 +91,8 @@ nav {
     color: var(--accent);
 }
 
-/* Main Layout */
 main {
-    flex: 1; /* Pushes footer down */
+    flex: 1;
 }
 
 .container {
@@ -70,26 +103,38 @@ main {
 
 .page-title {
     text-align: center;
-    color: var(--primary);
+    color: var(#eeeeee);
     margin-bottom: 3rem;
     font-size: 2.5rem;
 }
 
 /* Hero Section (Home) */
 .hero {
+    position: relative;
     height: 80vh;
-    background: linear-gradient(rgba(44,62,80,0.8), rgba(44,62,80,0.8)), 
+    background: linear-gradient(rgba(34, 56, 78, 0.7), rgba(34, 56, 78, 0.7)), 
                 url('../media/mcnair.webp') center/cover;
-    /* Note: Add a file named hero-bg.jpg to your media folder, or this will be gray */
     background-color: #555; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding: 0 20px;
+    padding: 4rem 40px;
 }
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
+    height: 150px;
+    
+    background: linear-gradient(to bottom, transparent, var(--bkgd));
+    
+    pointer-events: none;
+}
 .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
 .btn {
     display: inline-block;
@@ -109,17 +154,24 @@ main {
 }
 
 .member-card {
-    background: var(--light);
+    background: var(--bkgd);
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
 }
 
 .member-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    background-color: #ddd; /* Placeholder color */
+    width: 260px;          /* Fixed width */
+    height: 380px;         /* Taller height = Portrait shape */
+    object-fit: cover;     /* Crops the photo nicely so faces don't stretch */
+    border-radius: 20px;   /* Roundness of the corners */
+    margin-top: 30px;      /* Adds space at the top of the card */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Adds a subtle "pop" shadow */
+    
+    /* Center the image in the card */
+    display: block;        
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .member-info { padding: 20px; }
@@ -165,16 +217,40 @@ textarea { height: 150px; }
 
 /* Footer */
 footer {
-    background: #1a252f;
-    color: #bdc3c7;
-    text-align: center;
-    padding: 2rem;
-    margin-top: auto;
+    background: linear-gradient(to bottom, var(--bkgd), var(--dark));
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 50px;
+    padding-bottom: 5px;
+    margin-top: 5rem;
 }
-
 /* Responsive */
+.responsive-gap {
+    display: block;
+    margin-bottom: 150px !important;
+}
 @media(max-width: 768px) {
-    nav { flex-direction: column; gap: 15px; }
-    .nav-links a { margin: 0 10px; }
-    .hero h1 { font-size: 2rem; }
+    .responsive-gap {
+        margin-bottom: 20px !important;
+
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 1rem;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin: 0 10px;
+    }
+    .hero h1 { font-size: 3rem; }
+    .hero h2 { font-size: 1.2rem;}
 }
