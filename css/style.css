@@ -144,6 +144,7 @@ main {
     text-decoration: none;
     border-radius: 4px;
     margin-top: 20px;
+    position: relative; z-index: 10
 }
 
 /* Team Grid */
@@ -233,27 +234,65 @@ footer {
     display: block;
     margin-bottom: 150px !important;
 }
-@media(max-width: 1300px) {
-    .responsive-gap {
-        margin-bottom: 50px !important;
+/* =========================================
+   RESPONSIVE STYLES (Max-Width: 1300px)
+   ========================================= */
 
-    }
+/* =========================================
+   RESPONSIVE STYLES (Max-Width: 1300px)
+   ========================================= */
+@media screen and (max-width: 1300px) {
+
+    /* --- FIX 1: Center Nav Under Logo --- */
     nav {
-        flex-direction: column;
-        gap: 15px;
-        padding-bottom: 1rem;
+        flex-direction: column; /* Stack Logo on top of Links */
+        justify-content: center;
+        align-items: center;    /* Center align everything horizontally */
+        gap: 5px;              /* Space between Logo and Links */
+        padding-bottom: 0px;
     }
+
     .nav-links {
         display: flex;
-        justify-content: center;
-        width: 100%;
-        flex-wrap: nowrap;
+        justify-content: center; /* Center the links within their container */
+        width: 100%;             /* Ensure container spans full width */
+        flex-wrap: wrap;         /* Allow wrapping if screen is very narrow */
     }
 
     .nav-links a {
-        margin-left: 0;
-        margin: 0 10px;
+        margin: 0 10px;         /* Equal spacing on left AND right */
+        font-size: 1rem;
     }
-    .hero h1 { font-size: 48px; }
-    .hero h2 { font-size: 24px;}
+
+    /* --- FIX 2: Contact Button Visibility --- */
+    .hero {
+        /* Ensure the hero container handles stacking contexts correctly */
+        position: relative; 
+        min-height: 60vh;
+        height: auto;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0px; /* Reduces space below the main title */
+        line-height: 1.2;      /* Optional: tightens the text lines themselves */
+    }
+
+    /* Target H2 specifically inside Hero */
+    .hero h2 {
+        margin-top: 0;         /* Removes space above the subtitle */
+        margin-bottom: 1rem; /* Keeps space below subtitle (before the button) */
+        font-size: 1.5rem;     /* Optional: scale down h2 for mobile */
+    }
+
+    footer {
+        background: var(--bkgd);
+        background-image: none;
+        justify-content: center;
+        text-align: center;
+        font-size: 12px;
+    }
 }
