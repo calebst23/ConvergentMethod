@@ -64,8 +64,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 15px;
-    
-
+    white-space: nowrap;
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
@@ -85,6 +84,7 @@ nav {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 0.9rem;
+
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -233,7 +233,7 @@ footer {
 }
 @media(max-width: 768px) {
     .responsive-gap {
-        margin-bottom: 20px !important;
+        margin-bottom: 50px !important;
 
     }
     nav {
@@ -245,12 +245,13 @@ footer {
         display: flex;
         justify-content: center;
         width: 100%;
+        flex-wrap: nowrap;
     }
 
     .nav-links a {
         margin-left: 0;
         margin: 0 10px;
     }
-    .hero h1 { font-size: 1rem; }
-    .hero h2 { font-size: 0.5rem;}
+    .hero h1 { font-size: 3rem; }
+    .hero h2 { font-size: 2rem;}
 }
