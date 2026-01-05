@@ -252,6 +252,6 @@ footer {
         margin-left: 0;
         margin: 0 10px;
     }
-    .hero h1 { font-size: 2rem; }
-    .hero h2 { font-size: 1.75rem;}
+    .hero h1 { font-size: 48px; }
+    .hero h2 { font-size: 24px;}
 }
