@@ -231,7 +231,7 @@ footer {
     display: block;
     margin-bottom: 150px !important;
 }
-@media(max-width: 768px) {
+@media(max-width: 1300px) {
     .responsive-gap {
         margin-bottom: 50px !important;
 
@@ -252,6 +252,6 @@ footer {
         margin-left: 0;
         margin: 0 10px;
     }
-    .hero h1 { font-size: 3rem; }
-    .hero h2 { font-size: 2rem;}
+    .hero h1 { font-size: 2rem; }
+    .hero h2 { font-size: 1.75rem;}
 }
