@@ -225,6 +225,8 @@ footer {
     min-height: 50px;
     padding-bottom: 5px;
     margin-top: 5rem;
+    white-space: nowrap;
+    flex-wrap: nowrap;
 }
 /* Responsive */
 .responsive-gap {
