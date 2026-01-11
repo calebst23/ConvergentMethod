@@ -259,9 +259,13 @@ main {
 /* Divider Line Styling */
 .section-divider {
     border: 0;
-    height: 2px;              /* Thickness of the line */
-    background: var(--light); /* Uses your theme color */
-    margin: 4rem 0;           /* Large vertical gap (top/bottom) */
+    height: 2px;              /* Thickness */
+    background: var(--light); /* Color */
+    
+    /* --- THE FIX --- */
+    width: 90%;               /* Sets length to 90% of screen width */
+    max-width: 1100px;        /* Optional: Caps width to match your main content */
+    margin: 4rem auto;        /* 4rem Top/Bottom, 'auto' Left/Right centers it */
 }
 
 /* Three Column Grid Styling */
@@ -270,7 +274,8 @@ main {
     grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
     gap: 40px; /* Space between the columns */
     text-align: left;
-    margin: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 .column h3 {
