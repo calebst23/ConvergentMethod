@@ -153,6 +153,30 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
+/* LinkedIn Button Styling */
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+    background-color: var(--accent);
+    color: var(--white);
+    
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    
+    padding: 12px 25px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* Sizing the Logo Image */
+.linkedin-btn img {
+    height: 20px;
+    width: auto;
+}
 
 .member-card {
     background: var(--bkgd);
@@ -162,14 +186,12 @@ main {
 }
 
 .member-img {
-    width: 260px;          /* Fixed width */
-    height: 380px;         /* Taller height = Portrait shape */
-    object-fit: cover;     /* Crops the photo nicely so faces don't stretch */
-    border-radius: 20px;   /* Roundness of the corners */
-    margin-top: 30px;      /* Adds space at the top of the card */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Adds a subtle "pop" shadow */
-    
-    /* Center the image in the card */
+    width: 260px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     display: block;        
     margin-left: auto;
     margin-right: auto;
