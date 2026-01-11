@@ -256,6 +256,59 @@ main {
 .member-info { padding: 20px; }
 .role { color: var(--accent); font-weight: bold; display: block; margin-bottom: 10px; }
 
+/* Divider Line Styling */
+.section-divider {
+    border: 0;
+    height: 2px;              /* Thickness of the line */
+    background: var(--light); /* Uses your theme color */
+    margin: 4rem 0;           /* Large vertical gap (top/bottom) */
+}
+
+/* Three Column Grid Styling */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 40px; /* Space between the columns */
+    text-align: left;
+    margin: 1rem;
+}
+
+.column h3 {
+    color: var(--accent);     /* Blue accent color */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.column p {
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* =========================================
+   RESPONSIVE (Stacking Logic)
+   ========================================= */
+
+/* On screens smaller than 900px (Tablets & Phones) */
+@media screen and (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: 1fr; /* Switch to 1 single column */
+        gap: 40px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    /* Optional: Add a subtle separator between stacked items on mobile */
+    .column {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 30px;
+    }
+
+    .column:last-child {
+        border-bottom: none;
+    }
+}
 /* Gallery Grid */
 .gallery-grid {
     display: grid;
